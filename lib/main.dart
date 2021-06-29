@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_generic_template/users/landing.dart';
+
+import 'commons/menus/main_menu.dart';
 
 void main() {
   runApp(MyApp());
@@ -40,7 +43,7 @@ class MyApp extends StatelessWidget {
                 width: 256,
                 child: MainMenu(),
               ),
-              Expanded(child: Body())
+              Expanded(child: Landing())
             ],
           ),
         ),
@@ -49,82 +52,4 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MenuGroup extends StatelessWidget {
-  const MenuGroup({Key? key, required this.groupTitle, required this.groupIcon})
-      : super(key: key);
 
-  final String groupTitle;
-  final IconData groupIcon;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.black12,
-      child: ListTile(
-        leading: Icon(groupIcon),
-        title: Text(groupTitle),
-      ),
-    );
-  }
-}
-
-class MainMenu extends StatelessWidget {
-  const MainMenu({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: ListView(
-        children: [
-          MenuGroup(
-              groupTitle: "NFT Management",
-              groupIcon: Icons.filter_frames_outlined),
-          ListTile(
-            leading: Icon(
-              Icons.report,
-            ),
-            title: Text("Report"),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: Icon(
-              Icons.manage_search,
-            ),
-            title: Text("Management"),
-            onTap: () {},
-          ),
-          Divider(),
-          MenuGroup(
-              groupTitle: "Administration",
-              groupIcon: Icons.admin_panel_settings),
-          ListTile(
-            leading: Icon(
-              Icons.person,
-            ),
-            title: Text("Users"),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: Icon(
-              Icons.lock,
-            ),
-            title: Text("Roles"),
-            onTap: () {},
-          ),
-          Divider()
-        ],
-      ),
-    );
-  }
-}
-
-class DeviceType {}
-
-class Body extends StatelessWidget {
-  const Body({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Placeholder();
-  }
-}
