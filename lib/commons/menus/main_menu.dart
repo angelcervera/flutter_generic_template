@@ -70,7 +70,14 @@ class MainMenu extends StatelessWidget {
             title: Text("Roles"),
             onTap: () {},
           ),
-          Divider()
+          Divider(),
+          ListTile(
+            trailing: Icon(
+              Icons.arrow_back_ios,
+            ),
+            onTap: () {},
+          ),
+          Divider(),
         ],
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'details.dart';
+import 'list.dart';
 
 class Landing extends StatelessWidget {
   const Landing({Key? key}) : super(key: key);
@@ -7,8 +8,9 @@ class Landing extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Expanded(child: Card(child: Container())),
+        Expanded(child: PaginatedList()),
         SizedBox(width: 300, child: Card(child: Details()),)
       ],
     );
