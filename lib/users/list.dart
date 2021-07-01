@@ -20,15 +20,9 @@ class MyData extends DataTableSource {
 
   DataRow getRow(int index) {
     return DataRow(cells: [
-      DataCell(
-          Text(_data[index]['name'].toString())
-      ),
-      DataCell(
-          Text(_data[index]["age"].toString())
-      ),
-      DataCell(
-          Text(_data[index]["roles"].toString())
-      ),
+      DataCell(Text(_data[index]['name'].toString())),
+      DataCell(Text(_data[index]["age"].toString())),
+      DataCell(Text(_data[index]["roles"].toString())),
     ]);
   }
 }
@@ -49,6 +43,13 @@ class _PaginatedListState extends State<PaginatedList> {
       child: PaginatedDataTable(
         source: _data,
         header: Text('Users Management'),
+        actions: [
+          TextButton.icon(
+            icon: Icon(Icons.add),
+            label: Text("New User"),
+            onPressed: () {},
+          ),
+        ],
         onSelectAll: (isSelected) => {},
         columnSpacing: 100,
         horizontalMargin: 10,
