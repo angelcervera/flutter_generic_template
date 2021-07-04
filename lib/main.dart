@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_generic_template/users/landing.dart';
 
+import 'commons/generic_theme.dart';
 import 'commons/menus/main_menu.dart';
 
 void main() {
@@ -14,9 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Generic Template',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          primarySwatch: Colors.grey,
-          visualDensity: VisualDensity.adaptivePlatformDensity),
+      theme: genericThemeData,
       home: Scaffold(
         appBar: AppBar(
           leadingWidth: 256,
